@@ -1,22 +1,10 @@
-<div *ngIf="HeroeSeleccionado">
-    <h1>{{Titulo}}</h1>
-    <h2>Detalles de {{HeroeSeleccionado.Nombre}}</h2>
-    <div>
-      <label>Código: </label>{{HeroeSeleccionado.Id}}
-    </div>
-    <div>
-      <label>Nombre: </label>
-      <input [(ngModel)]="HeroeSeleccionado.Nombre" placeholder="Nombre">
-    </div>
-</div>
-
-<hr>
-
+<h1>{{title}}</h1>
 <h2>Mis Héroes</h2>
 <ul class="heroes">
-    <li *ngFor="let Elemento of Heroes"
-      [class.selected]="Elemento === HeroeSeleccionado"
-      (click)="onSelect(Elemento)">
-      <span class="badge">{{Elemento.Id}}</span> {{Elemento.Nombre}}
-    </li>
+  <li *ngFor="let Elemento of Heroes"
+    [class.selected]="Elemento === HeroeSeleccionado"
+    (click)="Mostrar(Elemento)">
+    <span class="badge">{{Elemento.Id}}</span> {{Elemento.Nombre}}
+  </li>
 </ul>
+<HeroeDetalle [Heroe]="HeroeSeleccionado"></HeroeDetalle>

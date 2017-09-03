@@ -1,22 +1,6 @@
 import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-
-export class AppComponent {
-  Titulo = 'Lista de héroes';
-  Heroes = HEROES;
-  HeroeSeleccionado: Heroe;
-
-  onSelect(heroe: Heroe): void {
-    this.HeroeSeleccionado = heroe;
-  }
-}
-
-
+import { Heroe } from '../models/Heroe';
 
 const HEROES: Heroe[] = [
   { Id: 11, Nombre: 'Mr. Nice' },
@@ -31,7 +15,18 @@ const HEROES: Heroe[] = [
   { Id: 20, Nombre: 'Tornado' }
 ];
 
-export class Heroe {
-  Id : number;
-  Nombre: string;
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+  Titulo = 'Lista de héroes';
+  Heroes = HEROES;
+  HeroeSeleccionado: Heroe;
+
+  Mostrar(heroe: Heroe): void {
+    this.HeroeSeleccionado = heroe;
+  }
 }
