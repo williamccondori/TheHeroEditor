@@ -1,9 +1,22 @@
-<h1>{{Titulo}}</h1>
-<h2>Detalles de {{Heroe.Nombre}}</h2>
-<div>
-  <label>Código: </label>{{Heroe.Id}}
+<div *ngIf="HeroeSeleccionado">
+    <h1>{{Titulo}}</h1>
+    <h2>Detalles de {{HeroeSeleccionado.Nombre}}</h2>
+    <div>
+      <label>Código: </label>{{HeroeSeleccionado.Id}}
+    </div>
+    <div>
+      <label>Nombre: </label>
+      <input [(ngModel)]="HeroeSeleccionado.Nombre" placeholder="Nombre">
+    </div>
 </div>
-<div>
-  <label>Nombre: </label>
-  <input [(ngModel)]="Heroe.Nombre" placeholder="Nombre">
-</div>
+
+<hr>
+
+<h2>Mis Héroes</h2>
+<ul class="heroes">
+    <li *ngFor="let Elemento of Heroes"
+      [class.selected]="Elemento === HeroeSeleccionado"
+      (click)="onSelect(Elemento)">
+      <span class="badge">{{Elemento.Id}}</span> {{Elemento.Nombre}}
+    </li>
+</ul>
