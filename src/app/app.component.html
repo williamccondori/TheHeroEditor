@@ -1,10 +1,6 @@
-<h1>{{title}}</h1>
-<h2>Mis Héroes</h2>
-<ul class="heroes">
-  <li *ngFor="let Elemento of Heroes"
-    [class.selected]="Elemento === HeroeSeleccionado"
-    (click)="Mostrar(Elemento)">
-    <span class="badge">{{Elemento.Id}}</span> {{Elemento.Nombre}}
-  </li>
-</ul>
-<HeroeDetalle [Heroe]="HeroeSeleccionado"></HeroeDetalle>
+<h1>{{Titulo}}</h1>
+<nav>
+    <a routerLink="/dashboard">Pantalla de administración</a>
+    <a routerLink="/heroe">Héroes</a>
+</nav>
+<router-outlet></router-outlet>

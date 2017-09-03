@@ -2,10 +2,11 @@
     <h1>{{Titulo}}</h1>
     <h2>Detalles de {{Heroe.Nombre}}</h2>
     <div>
-        <label>Código: </label>{{Heroe.Id}}
+        <label>Id: </label>{{Heroe.Id}}
     </div>
     <div>
-        <label>Nombre: </label>
+        <label>Nomb: </label>
         <input [(ngModel)]="Heroe.Nombre" placeholder="Nombre">
     </div>
+    <button (click)="Regresar()">Regresar</button>
 </div>

@@ -1,0 +1,8 @@
+<h3>Pantalla de administración</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let elemento of Heroes" [routerLink]="['/heroe', elemento.Id]" class="col-1-4">
+    <div class="module hero">
+      <h4>{{elemento.Nombre}}</h4>
+    </div>
+  </a>
+</div>

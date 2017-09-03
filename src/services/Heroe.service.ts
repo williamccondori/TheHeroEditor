@@ -25,9 +25,14 @@ export class HeroeService {
 
     ObtenerHeroesLento(): Promise<Heroe[]> {
         return new Promise(resolve => {
-          // SImular conexión lenta de dos segundos.
-          setTimeout(() => resolve(this.ObtenerHeroes()), 2000);
+            // SImular conexión lenta de dos segundos.
+            setTimeout(() => resolve(this.ObtenerHeroes()), 2000);
         });
-      }
+    }
+
+    BuscarHeroe(id: number): Promise<Heroe> {
+        return this.ObtenerHeroes()
+            .then(heroe => HEROES.find(heroe => heroe.Id === id));
+    }
 }
 
