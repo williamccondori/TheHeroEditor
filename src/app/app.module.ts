@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
+import { HeroeService } from '../services/Heroe.service';
+
 import { AppComponent } from './app.component';
 import { HeroeDetalleComponent } from './HeroeDetalle.component';
 
@@ -14,7 +16,9 @@ import { HeroeDetalleComponent } from './HeroeDetalle.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    HeroeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
